@@ -11,12 +11,12 @@ const BOOT = [
 ];
 
 const CTF_CERTS = [
-  { id: 1, name: "CultRang IIT GOA", image: "/certs/CultRand.jpg", grade: "S-GRADE" },
-  { id: 2, name: "Bypass CTF", image: "/certs/Bypass_ctf.jpg", grade: "S-GRADE" },
-  { id: 3, name: "UNI6CTF",  image: "/certs/UNI6CTF.jpeg", grade: "A-GRADE" },
-  { id: 4, name: "Cyber Geek", image: "/certs/CyberGeek26.jpeg", grade: "S-GRADE" },
-  { id: 5, name: "Cyber Leelawat",  image: "/certs/CyberLeelawat.jpeg", grade: "A-GRADE" },
-  { id: 6, name: "Thunder Cipher", image: "/certs/DIgitalManhunt_ctf.jpg", grade: "B-GRADE" },
+  { id: 1, name: "CultRang IIT GOA", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/CultRand.jpg", image: "/certs/CultRand.jpg", grade: "S-GRADE" },
+  { id: 2, name: "Bypass CTF", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/Bypass_ctf.jpg", image: "/certs/Bypass_ctf.jpg", grade: "S-GRADE" },
+  { id: 3, name: "UNI6CTF", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/UNI6CTF.jpeg", image: "/certs/UNI6CTF.jpeg", grade: "A-GRADE" },
+  { id: 4, name: "Cyber Geek", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/CyberGeek26.jpeg", image: "/certs/CyberGeek26.jpeg", grade: "S-GRADE" },
+  { id: 5, name: "Cyber Leelawat", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/CyberLeelawat.jpeg", image: "/certs/CyberLeelawat.jpeg", grade: "A-GRADE" },
+  { id: 6, name: "Thunder Cipher", url: "https://github.com/ashirali84/portfolio/blob/main/public/certs/DIgitalManhunt_ctf.jpg", image: "/certs/DIgitalManhunt_ctf.jpg", grade: "B-GRADE" },
 ];
 
 const SKILLS = [
@@ -396,6 +396,7 @@ export default function Home() {
                 style={{ background: "rgba(10,5,20,0.9)" }}
               >
                 <div className="relative h-44 overflow-hidden bg-gray-900/50">
+                <a href={cert.url} target="_blank" className="absolute inset-0">
                   <img
                     src={cert.image} alt={cert.name}
                     className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
@@ -404,7 +405,7 @@ export default function Home() {
                   <div
                     className="absolute inset-0 flex flex-col items-center justify-center"
                     style={{ background: "linear-gradient(135deg, rgba(124,58,237,0.2), rgba(29,78,216,0.2))" }}
-                  >
+                    >
                     {/* <span className="text-4xl font-black text-purple-400/40">{cert.platform}</span> */}
                     {/* <span className="text-xs text-purple-600/60 mt-2 font-mono">Upload cert image</span> */}
                   </div>
@@ -414,9 +415,10 @@ export default function Home() {
                       background: cert.grade === "S-GRADE" ? "rgba(124,58,237,0.8)" : "rgba(29,78,216,0.8)",
                       color: "#e9d5ff", border: "1px solid rgba(167,139,250,0.4)",
                     }}
-                  >
+                    >
                     {cert.grade}
                   </div>
+                      </a>
                 </div>
                 <div className="p-4 flex items-center justify-between">
                   <div>
